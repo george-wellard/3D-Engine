@@ -17,14 +17,28 @@ int main()
 	while (!window.Closed())
 	{
 		window.Clear(); 
-		/*glBegin(GL_QUADS);
+		if (window.isKeyPressed(GLFW_KEY_A))
+		{	
+			std::cout << "PRESSED KEY" << std::endl;
+		}
+
+		if (window.isButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
+		{
+			std::cout << "PRESSED BUTTON" << std::endl;
+		}
+
+		double x, y;
+		window.getMousePosition(x, y);
+		std::cout << x << ", " << y << std::endl;
+
+		glBegin(GL_QUADS);
 		glVertex2f(-0.5f, -0.5f);
 		glVertex2d(-0.5f, 0.5f);
 		glVertex2f(0.5f, 0.5f);
 		glVertex2f(0.5f, -0.5f);
-		glEnd();*/
+		glEnd();
 
-		glDrawArrays(GL_ARRAY_BUFFER, 0, 0);
+		//glDrawArrays(GL_ARRAY_BUFFER, 0, 0);
 		window.Update();
 	}
 
